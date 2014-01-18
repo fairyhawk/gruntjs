@@ -1,11 +1,7 @@
-gruntjs
-=======
-
-gruntjs压缩项目js、css、html等。方便部署
-
 中文参考地址：http://gruntjs.cn/getting-started/
      
 1.安装node.js会同时安装npm 下载地址：http://nodejs.org/download/
+
 
 windows下用安装版本，会自带安装npm，验证安装成功：如果有问题就把安装目录下到环境变量path中。
 
@@ -27,18 +23,20 @@ npm install -g grunt-cli
 package.json:
 
 {
-  "name": "project-static",
+  "name": " sns-static",
   "version": "1.0.0",
-  "description": "mypro-static",
-  "src": "src/main/webapp/static",
-  "target": "target/mypro/static",
+  "description": "sns.static",
   "devDependencies": {
     "grunt": "~0.4.2",
-    "grunt-contrib-jshint": "~0.6.3",
-    "grunt-contrib-nodeunit": "~0.2.2",
-    "grunt-contrib-uglify": "~0.2.2",
-    "grunt-contrib-htmlmin": "~0.1.3",  
-    "grunt-contrib-cssmin": "~0.6.1"
+    "grunt- contrib- jshint": "~0.6.3",
+    "grunt- contrib- nodeunit": "~0.2.2",
+    "grunt- contrib- uglify": "~0.2.2",
+    "grunt- contrib- htmlmin": "~0.1.3", 
+    "grunt- contrib- cssmin": "~0.6.1",
+    "grunt- contrib- imagemin": "~0.1.4",
+    "grunt- regarde": "latest",
+    "grunt- contrib-connect": "latest",
+    "grunt- contrib- livereload": "latest"
   }
 }
 
@@ -69,8 +67,13 @@ module.exports = function(grunt) {
                      expand: true,     // Enable dynamic expansion.
                      cwd: 'src/static/',      // Src matches are relative to this path.
                      src: [ 'js/blog/*.js',
+                           'js/discuss/*.js',
                            'js/friend/*.js',
-                           'js/letter/*.js'
+                           'js/header/*.js',
+                           'js/letter/*.js',
+                           'js/suggest/*.js',
+                           'js/weibo/*.js',
+                           'js/weibo/*.js',
                            ], // Actual pattern(s) to match.
                      dest: 'build/static/',   // Destination path prefix.
                      ext: '.js',   // Dest filepaths will have this extension. .min.js
@@ -126,3 +129,7 @@ module.exports = function(grunt) {
 命令行执行:grunt build 
 
 至此项目需要压缩的js和css完成。
+
+
+
+
